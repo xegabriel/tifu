@@ -15,4 +15,11 @@ node app
 ```
 * Step3 - Navigate to http://localhost:3000/
 
+## TODO
+* Encrypt passwords
+* Prevent multiple votes/redesign voting schema
+
 ## Screenshots
+![Screenshot1](https://raw.githubusercontent.com/1Mihail/tifu/master/Screenshots/tifu1.jpg)
+![Screenshot2](https://raw.githubusercontent.com/1Mihail/tifu/master/Screenshots/tifu2.jpg)
+![Screenshot3](https://raw.githubusercontent.com/1Mihail/tifu/master/Screenshots/tifu3.jpg)
