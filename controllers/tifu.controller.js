@@ -45,4 +45,19 @@ exports.upVote = function(req, res) {
         }
     });
 
-    };
+};
+
+exports.deletePost = function(req, res) {
+ var id = req.param("id");
+
+        Tifu.remove({
+            _id: id 
+        }, function(err){
+            if (err) {
+                console.log(err)
+            }
+            else {
+                res.json({message: 'Deleted!'});
+            }
+});
+};

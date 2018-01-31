@@ -51,11 +51,15 @@
                 <p>{{i.entry}}</p>
                 <span class="badge">{{i.votes}}</span>
                 <!------------------------------>
-                <div class="all-buttons">
-                    <button id="vote-button-{{i.id}}" class="btn btn-default"  >
+                <div class="all-buttons" style="display:inline-block">
+                    <button id="vote-button-{{i.id}}" class="btn btn-default">
                     <span class="glyphicon glyphicon-thumbs-up"></span> Like
                     </button>
                 </div>
+                <button id="delete-button-{{i.id}}" class="btn btn-default" style="display:inline-block">
+                    <span class="glyphicon glyphicon-remove"></span> Delete
+                </button>
+                
                 <script>
                 $('#vote-button-{{i.id}}').click(function(){
                 $.ajax({
@@ -65,6 +69,15 @@
                              $('#vote-button-{{i.id}}').prop('disabled', true);
                              location.reload();
                         }
+                    });
+                });
+                $('#delete-button-{{i.id}}').click(function(){
+                $.ajax({
+                    url: '/{{i.id}}', 
+                    type: 'DELETE',
+                    success: function(result) {
+                    location.reload();
+                    }
                     });
                 });
                 </script>

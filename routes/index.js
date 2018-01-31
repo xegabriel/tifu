@@ -19,6 +19,10 @@ router.post('/newPost', function(req, res) {
 router.put('/:id', function(req, res) {
     return tifuCtrl.upVote(req, res);
 });
+
+router.delete('/:id', function(req, res) {
+    return tifuCtrl.deletePost(req, res);
+});
 /*Users*/
 router.get('/auth', function(req, res) {
     return userCtrl.getAuth(req, res);
