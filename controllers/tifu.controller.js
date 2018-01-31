@@ -48,16 +48,26 @@ exports.upVote = function(req, res) {
 };
 
 exports.deletePost = function(req, res) {
- var id = req.param("id");
+     var id = req.param("id");
+    Tifu.findById(id, function(err, tifu) {
+        if (err) {
+            res.send(err);
+        }
+        else if (req.session.user && tifu.createdBy == req.session.user.email) {
+                    Tifu.remove({
+                        _id: id 
+                    }, function(err){
+                        if (err) {
+                            console.log(err)
+                        }
+                        else {
+                            res.json({message: 'Deleted!'});
+                        }
+            });
+        }
+        else {
+            res.json({message:'Not authorized!'});
+        }
+    });
 
-        Tifu.remove({
-            _id: id 
-        }, function(err){
-            if (err) {
-                console.log(err)
-            }
-            else {
-                res.json({message: 'Deleted!'});
-            }
-});
 };
