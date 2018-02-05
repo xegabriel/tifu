@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>var isLoggedIn = {{isLoggedIn}};</script>
+    <script src="scripts.js"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse" style="background-color: #e3f2fd;">
@@ -18,19 +20,6 @@
             <li ><a id="logout" href="/out">Log out</a></li>
         </ul>
     </div>
-    <script>
-    if(!{{isLoggedIn}})
-        {
-            document.getElementById('authentificate').style.display = "inline-block";
-            document.getElementById('logout').style.display = "none";
-            document.getElementById('newTifu').style.display = "none";
-        }
-        else{
-            document.getElementById('authentificate').style.display = "none";
-            document.getElementById('logout').style.display = "inline-block";
-            document.getElementById('newTifu').style.display = "inline-block";
-        }
-    </script>
 </div>
 
 <div class="container">
